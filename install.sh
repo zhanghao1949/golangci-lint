@@ -374,7 +374,7 @@ End of functions from https://github.com/client9/shlib
 EOF
 
 PROJECT_NAME="golangci-lint"
-OWNER=zhanghao1949
+OWNER=golangci
 REPO="golangci-lint"
 BINARY=golangci-lint
 FORMAT=tar.gz
