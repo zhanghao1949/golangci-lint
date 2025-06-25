@@ -322,7 +322,7 @@ github_release() {
   owner_repo=$1
   version=$2
   test -z "$version" && version="latest"
-  giturl="https://mirror.ghproxy.com/https://github.com/${owner_repo}/releases/${version}"
+  giturl="https://gh-proxy.com/github.com/${owner_repo}/releases/${version}"
   json=$(http_copy "$giturl" "Accept:application/json")
   test -z "$json" && return 1
   version=$(echo "$json" | tr -s '\n' ' ' | sed 's/.*"tag_name":"//' | sed 's/".*//')
@@ -387,7 +387,7 @@ log_prefix() {
 	echo "$PREFIX"
 }
 PLATFORM="${OS}/${ARCH}"
-GITHUB_DOWNLOAD=https://mirror.ghproxy.com/https://github.com/${OWNER}/${REPO}/releases/download
+GITHUB_DOWNLOAD=https://gh-proxy.com/github.com/${OWNER}/${REPO}/releases/download
 
 uname_os_check "$OS"
 uname_arch_check "$ARCH"
